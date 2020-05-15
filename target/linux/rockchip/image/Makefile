@@ -27,7 +27,7 @@ define Build/boot-script
 	mkimage -A arm -O linux -T script -C lzma -a 0 -e 0 -d mmc.bootscript $@.boot/boot.scr
 endef
 
-define Build/pine64-img
+define Build/rockchip64-img
 	# Creates the final SD/eMMC images, 
 	# combining boot partition, root partition as well as the u-boot bootloader
 

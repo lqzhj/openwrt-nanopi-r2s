@@ -21,6 +21,14 @@ define U-Boot/Default
   HIDDEN:=1
 endef
 
+define U-Boot/rockpi-e-rk3328
+  BUILD_SUBTARGET:=armv8
+  NAME:=RockPi E
+  BUILD_DEVICES:= \
+    radxa_rockpi-e
+  BL31=$(STAGING_DIR_IMAGE)/rk3328_bl31.elf
+endef
+
 define U-Boot/rockpro64-rk3399
   BUILD_SUBTARGET:=armv8
   NAME:=RockPro64
@@ -38,6 +46,7 @@ define U-Boot/rock64-rk3328
 endef
 
 UBOOT_TARGETS := \
+  rockpi-e-rk3328 \
   rockpro64-rk3399 \
   rock64-rk3328
 
@@ -47,7 +56,7 @@ UBOOT_MAKE_FLAGS += \
   BL31=$(BL31)
 
 define Build/Configure
-	 echo CONFIG_CMD_SETEXPR=y >> $(PKG_BUILD_DIR)/configs/$(UBOOT_CONFIG)_defconfig
+	echo CONFIG_CMD_SETEXPR=y >> $(PKG_BUILD_DIR)/configs/$(UBOOT_CONFIG)_defconfig
 	$(call Build/Configure/U-Boot)
 	$(SED) 's#CONFIG_MKIMAGE_DTC_PATH=.*#CONFIG_MKIMAGE_DTC_PATH="$(PKG_BUILD_DIR)/scripts/dtc/dtc"#g' $(PKG_BUILD_DIR)/.config
 	echo 'CONFIG_IDENT_STRING=" OpenWrt"' >> $(PKG_BUILD_DIR)/.config
