@@ -47,7 +47,7 @@ index 0000000000..012209110a
 +};
 +
 +/* Need this and all the pinctrl/gpio stuff above to set pinmux */
-+&vcc_sd {
++&vcc3v3_sdmmc {
 +	u-boot,dm-spl;
 +};
 diff --git a/arch/arm/dts/rk3328-rockpi-e.dts b/arch/arm/dts/rk3328-rockpi-e.dts
