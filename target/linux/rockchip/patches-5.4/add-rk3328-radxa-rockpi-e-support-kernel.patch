@@ -14,7 +14,7 @@ new file mode 100644
 index 000000000000..8bda9c3a4b6d
 --- /dev/null
 +++ b/arch/arm64/boot/dts/rockchip/rk3328-rockpi-e.dts
-@@ -0,0 +1,496 @@
+@@ -0,0 +1,480 @@
 +/*
 +* Copyright (c) 2016 Fuzhou Rockchip Electronics Co., Ltd
 +*
@@ -221,27 +221,11 @@ index 000000000000..8bda9c3a4b6d
 +status = "okay";
 +};
 +
-+&h265e {
-+status = "okay";
-+};
-+
-+&rkvdec {
-+status = "okay";
-+};
-+
-+&vepu {
-+status = "okay";
-+};
-+
 +&vop {
 +status = "okay";
 +};
 +
 +&vop_mmu {
-+status = "okay";
-+};
-+
-+&vpu_service {
 +status = "okay";
 +};
 +
