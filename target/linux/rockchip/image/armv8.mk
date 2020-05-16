@@ -5,12 +5,22 @@
 # See /LICENSE for more information.
 #
 
+define Device/friendlyarm_nanopi-r2s
+  DEVICE_VENDOR := FriendlyARM
+  DEVICE_MODEL := NanoPi R2S
+  SOC := rk3328
+  UBOOT_DEVICE_NAME := nanopi-r2s-rk3328
+  IMAGE/sysupgrade.img.gz := boot-common | boot-script | rockchip-img | gzip | append-metadata
+  DEVICE_PACKAGES := kmod-usb-net-rtl8152
+endef
+TARGET_DEVICES += friendlyarm_nanopi-r2s
+
 define Device/pine64_rock64
   DEVICE_VENDOR := Pine64
   DEVICE_MODEL := Rock64
   SOC := rk3328
   UBOOT_DEVICE_NAME := rock64-rk3328
-  IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-img | gzip | append-metadata
+  IMAGE/sysupgrade.img.gz := boot-common | boot-script | rockchip-img | gzip | append-metadata
   DEVICE_PACKAGES += kmod-drm-rockchip kmod-drm-rockchip-hdmi-sound
 endef
 TARGET_DEVICES += pine64_rock64
@@ -20,6 +30,6 @@ define Device/pine64_rockpro64
   DEVICE_MODEL := RockPro64
   SOC := rk3399
   UBOOT_DEVICE_NAME := rockpro64-rk3399
-  IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-img | gzip | append-metadata
+  IMAGE/sysupgrade.img.gz := boot-common | boot-script | rockchip-img | gzip | append-metadata
 endef
 TARGET_DEVICES += pine64_rockpro64

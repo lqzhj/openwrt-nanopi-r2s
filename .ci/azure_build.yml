@@ -10,7 +10,7 @@ trigger:
     - '.github/*'
 
 jobs:
-- job: rk3328_OpenWrt
+- job: nanopi_armbian_patch
   pool:
     vmImage: ubuntu-latest
 
