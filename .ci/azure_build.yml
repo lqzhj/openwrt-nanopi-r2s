@@ -10,7 +10,7 @@ trigger:
     - '.github/*'
 
 jobs:
-- job: openwrt_rk3328_nanopi_r2s
+- job: openwrt_rk3328_nanopi_r2s_test
   pool:
     vmImage: ubuntu-latest
 
